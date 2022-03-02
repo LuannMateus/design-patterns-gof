@@ -24,6 +24,8 @@
 - [Creational](#creational)
 
   - [Singleton](#creational-singleton)
+  - [Builder](#creational-builder)
+  - [Prototype](#creational-prototype)
 
 <a id="creational"></a>
 
@@ -109,6 +111,45 @@
 
 - <a href="https://github.com/LuannMateus/design-patterns-gof/tree/main/src/creational/builder">Builder</a>
 
+</br>
+</br>
+</br>
+
+<a id="creational-prototype"></a>
+
+<h3 align="center"><b>Prototype</b></h3>
+
+<div align="left">
+<h4> 📌 Intenção: </h4>
+
+</br>
+
+- Prototype é um padrão de design criacional que permite copiar objetos existentes sem tornar seu código dependente de suas classes.
+
+</br>
+
+<h4> 📌 Problema: </h4>
+
+</br>
+
+- Digamos que você tenha um objeto e deseje criar uma cópia exata dele. Como você faria? Primeiro, você deve criar um novo objeto da mesma classe. Então você precisa percorrer todos os campos do objeto original e copiar seus valores para o novo objeto. Por exemplo, um objeto deve ser criado após uma operação de banco de dados dispendiosa. Podemos armazenar em cache o objeto, retornar seu clone na próxima solicitação e atualizar o banco de dados conforme e quando necessário, reduzindo assim as chamadas ao banco de dados.
+
+</br>
+
+<h4> 📌 Solução: </h4>
+
+</br>
+
+- O padrão Prototype delega o processo de clonagem para os objetos reais que estão sendo clonados. O padrão declara uma interface comum para todos os objetos que suportam a clonagem. Essa interface permite clonar um objeto sem acoplar seu código à classe desse objeto. Normalmente, essa interface contém apenas um único método clone. A implementação do método clone é muito semelhante em todas as classes. O método cria um objeto da classe atual e transporta todos os valores de campo do objeto antigo para o novo. Você pode até copiar campos particulares porque a maioria das linguagens de programação permite que objetos acessem campos particulares de outros objetos que pertencem à mesma classe. Um objeto que suporta a clonagem é chamado de protótipo . Quando seus objetos têm dezenas de campos e centenas de configurações possíveis, a clonagem deles pode servir como uma alternativa à subclasse. Protótipos pré-construídos podem ser uma alternativa à subclassificação. Eis como funciona: você cria um conjunto de objetos, configurado de várias maneiras. Quando você precisa de um objeto como o que você configurou, basta clonar um protótipo em vez de construir um novo objeto do zero.
+
+</br>
+
+<h4> 📌 Implementação: </h4>
+
+</br>
+
+- <a href="https://github.com/LuannMateus/design-patterns-gof/tree/main/src/creational/prototype">Prototype</a>
+
 </div>
 
 </div>
@@ -130,3 +171,5 @@
 - <i>Design Patterns — Parte 5 — Singleton. Medium, 2019. Disponível em: https://medium.com/xp-inc/desing-patterns-parte-5-singleton-324c6effab6f. Acesso em: 24/02/2022.</i>
 
 - <i>Design Patterns — Parte 6 — Builder. Medium, 2019. Disponível em: https://medium.com/xp-inc/desing-patterns-parte-6-builder-f20752fb0c35. Acesso em: 27/02/2022.</i>
+
+- <i>Design Patterns — Parte 7 — Prototype. Medium, 2019. Disponível em: https://medium.com/xp-inc/desing-patterns-parte-7-prototype-98962514728f. Acesso em: 02/03/2022.</i>
