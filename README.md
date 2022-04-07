@@ -26,6 +26,7 @@
   - [Singleton](#creational-singleton)
   - [Builder](#creational-builder)
   - [Prototype](#creational-prototype)
+  - [Factory](#creational-factory)
 
 <a id="creational"></a>
 
@@ -150,6 +151,85 @@
 
 - <a href="https://github.com/LuannMateus/design-patterns-gof/tree/main/src/creational/prototype">Prototype</a>
 
+</br>
+</br>
+</br>
+
+<a id="creational-builder"></a>
+
+<h3 align="center"><b>Builder</b></h3>
+
+<div align="left">
+<h4> 📌 Intenção: </h4>
+
+</br>
+
+- O Builder é um padrão de design criacional que permite construir objetos complexos passo a passo. O padrão permite produzir diferentes tipos e representações de um objeto usando o mesmo código de construção.
+  Além disso, o padrão builder descreve uma maneira de separar um objeto de sua construção. O mesmo método de construção pode criar uma representação diferente do objeto.
+
+</br>
+
+<h4> 📌 Problema: </h4>
+
+</br>
+
+- Por exemplo, vamos pensar em como criar uma classe House. Para construir uma casa simples, você precisa construir quatro paredes e um piso, instalar portas, encaixar janelas e criar um telhado. Mas se você quiser uma casa maior de dois andares e com garagem para vários carros, com um quintal e outras coisas boas (como um sistema de aquecimento, encanamento e fiação elétrica)? A solução mais simples é estender a class House e criar um conjunto de subclasses para cobrir todas as combinações dos parâmetros. Mas, eventualmente, você terminará com um número considerável de subclasses. Qualquer novo parâmetro, como o estilo de varanda, exigirá que a hierarquia cresça ainda mais. Ou você também pode criar um construtor gigante na classe House com todos os parâmetros possíveis que controlam o objeto. Embora essa abordagem elimine a necessidade de subclasses, ela cria outro problema, vários parâmetros não serão utilizados, tornando o construtor grande e feio (e difícil de utilizar). Por exemplo, poucas casas tem piscinas; portanto, os parâmetros relacionados às piscinas seriam inúteis na maioria das vezes.
+
+</br>
+
+<h4> 📌 Solução: </h4>
+
+</br>
+
+- O padrão Builder sugere que você extraia o código de construção do objeto de sua própria classe e o mova para objetos separados chamados builders. O padrão Builder permite construir objetos complexos passo a passo. O Builder não permite que outros objetos acessem o produto enquanto ele está sendo construído. O padrão organiza construção objeto organizando em um conjunto de passos. Para criar um objeto, você executa uma série dessas etapas em um objeto construtor. A parte importante é que você não precisa executar todas as etapas. Você pode chamar apenas as etapas necessárias para produzir uma configuração específica de um objeto. Algumas das etapas de construção podem exigir implementação diferente quando você precisa criar várias representações do produto. Nesse caso, você pode criar várias classes builders diferentes que implementam o mesmo conjunto de etapas de construção, mas de uma maneira diferente. Em seguida, você pode usar esses builders no processo de construção para produzir diferentes tipos de objetos.
+
+</br>
+
+<h4> 📌 Implementação: </h4>
+
+</br>
+
+- <a href="https://github.com/LuannMateus/design-patterns-gof/tree/main/src/creational/builder">Builder</a>
+
+</br>
+</br>
+</br>
+
+<a id="creational-factory"></a>
+
+<h3 align="center"><b>Factory</b></h3>
+
+<div align="left">
+<h4> 📌 Intenção: </h4>
+
+</br>
+
+- Factory Method é um padrão de design criacional que fornece uma interface para criar objetos em uma superclasse, mas permite que as subclasses alterem o tipo de objeto que será criado. O Factory Method permite adiar a instanciação para as subclasses.
+
+</br>
+
+<h4> 📌 Problema: </h4>
+
+</br>
+
+- Imagine que você está criando um aplicativo de gerenciamento de logística. A primeira versão do seu aplicativo o único transporte utilizado é o de caminhões, portanto a maior parte do seu código fica dentro da classe Truck. Depois de um tempo, sua empresa cresce muito e se torna bastante popular. Então agora você precisa adicionar o transporte marítimo no aplicativo. Boas notícias para empresa, certo? Mas e o código? No momento, a maior parte do seu código é acoplada à classe Truck. A adição Ship ao aplicativo exigiria alterações em toda a base de código. Além disso, se mais tarde você decidir adicionar outro tipo de transporte ao aplicativo, provavelmente precisará fazer todas essas alterações novamente. Como resultado, você terá um código bastante acoplado, repleto de condicionais que alteram o comportamento do aplicativo, dependendo da classe de objetos de transporte.
+
+</br>
+
+<h4> 📌 Solução: </h4>
+
+</br>
+
+- O padrão Factory Method sugere que você substitua chamadas diretas de construção de objetos (usando o operador new) por chamadas para sua Factory Method. Objetos retornados por um Factory Method geralmente são chamados de "products". À primeira vista, essa mudança pode parecer inútil: acabamos de mover a chamada do construtor de uma parte do programa para outra. No entanto, considere o seguinte: agora você pode substituir o Factory Method em uma subclasse e alterar a classe de produtos que estão sendo criados pelo método. Porém, há uma pequena limitação: as subclasses podem retornar tipos diferentes de produtos somente se esses produtos tiverem uma classe ou interface básica comum. Além disso, o Factory Method na classe base deve ter seu tipo de retorno declarado como essa interface.
+
+</br>
+
+<h4> 📌 Implementação: </h4>
+
+</br>
+
+- <a href="https://github.com/LuannMateus/design-patterns-gof/tree/main/src/creational/factory">Prototype</a>
+
 </div>
 
 </div>
@@ -173,3 +253,5 @@
 - <i>Design Patterns — Parte 6 — Builder. Medium, 2019. Disponível em: https://medium.com/xp-inc/desing-patterns-parte-6-builder-f20752fb0c35. Acesso em: 27/02/2022.</i>
 
 - <i>Design Patterns — Parte 7 — Prototype. Medium, 2019. Disponível em: https://medium.com/xp-inc/desing-patterns-parte-7-prototype-98962514728f. Acesso em: 02/03/2022.</i>
+
+- <i>Design Patterns - Parte 3 – Factory Method. Medium, 2019. Disponível em: https://medium.com/xp-inc/desing-patterns-factory-method-a7496ae071aa. Acesso em: 07/04/2022.</i>
