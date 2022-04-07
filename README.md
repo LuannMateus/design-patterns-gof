@@ -27,6 +27,7 @@
   - [Builder](#creational-builder)
   - [Prototype](#creational-prototype)
   - [Factory](#creational-factory)
+  - [Abstract Factory](#creational-abstract-factory)
 
 <a id="creational"></a>
 
@@ -228,7 +229,52 @@
 
 </br>
 
-- <a href="https://github.com/LuannMateus/design-patterns-gof/tree/main/src/creational/factory">Prototype</a>
+- <a href="https://github.com/LuannMateus/design-patterns-gof/tree/main/src/creational/factory">Factory</a>
+
+<br/>
+<br/>
+<br/>
+
+<a id="creational-abstract-factory"></a>
+
+<h3 align="center"><b>Abstract Factory</b></h3>
+
+<div align="left">
+<h4> 📌 Intenção: </h4>
+
+</br>
+
+- Fornecer uma interface para criação de famílias de objetos relacionados ou dependentes sem especificar suas classes concretas.
+
+</br>
+
+<h4> 📌 Problema: </h4>
+
+</br>
+
+- Imagine que você está criando um simulador de loja de móveis. Seu código consiste em classes que representam:
+
+  - Uma família de produtos relacionados, digamos: Chair+ Sofa+ CoffeeTable.
+
+  - Várias variantes desta família. Por exemplo, produtos Chair+ Sofa+ CoffeeTableestão disponíveis nestas variantes: Modern, Victorian, ArtDeco.
+
+- Você precisa de uma maneira de criar objetos de móveis individuais para que eles correspondam a outros objetos da mesma família. Os clientes ficam muito bravos quando recebem móveis que não combinam. Esse padrão é encontrado no equipamento de estampagem de chapa usado na fabricação de automóveis japoneses. Além disso, você não deseja alterar o código existente ao adicionar novos produtos ou famílias de produtos ao programa. Os fornecedores de móveis atualizam seus catálogos com muita frequência e você não deseja alterar o código principal toda vez que isso acontece.
+
+</br>
+
+<h4> 📌 Solução: </h4>
+
+</br>
+
+- Forneça um nível de indireção que abstraia a criação de famílias de objetos relacionados ou dependentes sem especificar diretamente suas classes concretas. O objeto “factory” tem a responsabilidade de fornecer serviços de criação para toda a família. Os clientes nunca criam objetos diretamente, eles pedem à fábrica que faça isso por eles. Esse mecanismo facilita a troca de produtos entre famílias, porque a classe específica do objeto factory aparece apenas uma vez no aplicativo — onde é instanciada. O aplicativo pode substituir de uma vez toda a família de produtos simplesmente instanciando uma instância concreta diferente da AbstractFactory. Como o serviço fornecido pela factory é muito difundido, ele é implementado normalmente utilizando Singleton.
+
+</br>
+
+<h4> 📌 Implementação: </h4>
+
+</br>
+
+- <a href="https://github.com/LuannMateus/design-patterns-gof/tree/main/src/creational/abstractFactory">Abstract Factory</a>
 
 </div>
 
@@ -255,3 +301,5 @@
 - <i>Design Patterns — Parte 7 — Prototype. Medium, 2019. Disponível em: https://medium.com/xp-inc/desing-patterns-parte-7-prototype-98962514728f. Acesso em: 02/03/2022.</i>
 
 - <i>Design Patterns - Parte 3 – Factory Method. Medium, 2019. Disponível em: https://medium.com/xp-inc/desing-patterns-factory-method-a7496ae071aa. Acesso em: 07/04/2022.</i>
+
+- <i>Design Patterns - Parte 4 – Abstract Factory. Medium, 2019. Disponível em: https://medium.com/xp-inc/design-patterns-abstract-factory-da6b7057abce. Acesso em: 07/04/2022.</i>
