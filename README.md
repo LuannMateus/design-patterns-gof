@@ -29,6 +29,9 @@
   - [Factory](#creational-factory)
   - [Abstract Factory](#creational-abstract-factory)
 
+- [Structural](#structural)
+  - [Composite](#structural-composite)
+
 <a id="creational"></a>
 
 <br />
@@ -276,12 +279,63 @@
 
 - <a href="https://github.com/LuannMateus/design-patterns-gof/tree/main/src/creational/abstractFactory">Abstract Factory</a>
 
-</div>
+<br/>
+<br/>
+<br/>
+
+<a id="structural"></a>
+
+## Padrões Estruturais
+
+<br/>
+
+<a id="structural-composite"></a>
+
+<h3 align="center"><b>Composite</b></h3>
+
+<div align="left">
+<h4> 📌 Intenção: </h4>
+
+</br>
+
+- Composite é um padrão de design estrutural que permite compor objetos em estruturas de árvores e trabalhar com essas estruturas como se fossem objetos individuais. Com ele você pode:
+
+  - Compor objetos em estruturas de árvore para representar hierarquias de peças inteiras. Composite permite que os clientes tratem objetos individuais e composições de objetos de maneira uniforme.
+
+  - Composição recursiva
+
+  - “Diretórios contêm entradas, cada uma das quais poderia ser um diretório.”
+
+  - 1-para-muitos “tem uma hierarquia” acima da “é uma”
+
+</br>
+
+<h4> 📌 Problema: </h4>
+
+</br>
+
+- O aplicativo precisa manipular uma coleção hierárquica de objetos “primitivos” e “compostos”. O processamento de um objeto primitivo é tratado de uma maneira, e o processamento de um objeto composto é tratado de maneira diferente. Ter que consultar o “tipo” de cada objeto antes de tentar processá-lo não é desejável.
+
+</br>
+
+<h4> 📌 Solução: </h4>
+
+</br>
+
+- O padrão composite compõe objetos em termos de uma estrutura em árvore para representar partes e hierarquias inteiras. A chave para o padrão composite é uma classe abstrata que representa tanto o objeto primitivo como os seus recipientes.
+
+</br>
+
+<h4> 📌 Implementação: </h4>
+
+</br>
+
+- <a href="https://github.com/LuannMateus/design-patterns-gof/tree/main/src/structural/composite">Composite</a>
 
 </div>
 
-<br/>
-<br/>
+</div>
+
 <br/>
 <br/>
 <br/>
@@ -303,3 +357,5 @@
 - <i>Design Patterns - Parte 3 – Factory Method. Medium, 2019. Disponível em: https://medium.com/xp-inc/desing-patterns-factory-method-a7496ae071aa. Acesso em: 07/04/2022.</i>
 
 - <i>Design Patterns - Parte 4 – Abstract Factory. Medium, 2019. Disponível em: https://medium.com/xp-inc/design-patterns-abstract-factory-da6b7057abce. Acesso em: 07/04/2022.</i>
+
+- <i>Design Patterns — Parte 10 — Composite. Medium, 2019. Disponível em: https://medium.com/xp-inc/desing-patterns-parte-10-composite-f7600cb3aad7. Acesso em: 19/04/2022.</i>
