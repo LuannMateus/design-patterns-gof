@@ -416,7 +416,56 @@
 
 </br>
 
-- <a href="https://github.com/LuannMateus/design-patterns-gof/tree/main/src/structural/adapter">Adapter</a>
+- <a href="https://github.com/LuannMateus/design-patterns-gof/tree/main/src/structural/bridge">Adapter</a>
+
+<a id="structural-bridge"></a>
+
+<h3 align="center"><b>Bridge</b></h3>
+
+<div align="left">
+<h4> 📌 Intenção: </h4>
+
+</br>
+
+- Bridge é um padrão de projeto estrutural que tem a intenção de desacoplar uma abstração da sua implementação, de modo que as duas possam variar e evoluir independentemente.
+
+- Observação: abstração é um código de alto nível que geralmente delega tarefas para sua implementação; implementação é o código de baixo nível que realmente faz o trabalho (o código para o qual a abstração delega tarefas).
+
+</br>
+
+<h4> 📌 Problema: </h4>
+
+</br>
+
+- Abstração? Implementação? Parece assustador? Fique calmo e vamos considerar um exemplo simples.
+
+- Digamos que você tenha uma classe chamada Shape com um par de subclasses: Circle e Square. Você deseja estender essa hierarquia de classes para incorporar cores, e planeja criar Red e Blue modelar subclasses. No entanto, como você já tem duas subclasses, precisará criar quatro combinações de classes, como BlueCircle e RedSquare.
+
+- O número de combinações de classes cresce em progressão geométrica.
+
+- Adicionar novos tipos de formas e cores à hierarquia aumentará exponencialmente. Por exemplo, para adicionar uma forma de triângulo, é necessário introduzir duas subclasses, uma para cada cor. E depois disso, adicionar uma nova cor exigiria a criação de três subclasses, uma para cada tipo de forma. Quanto mais avançamos, pior fica.
+
+</br>
+
+<h4> 📌 Solução: </h4>
+
+</br>
+
+- Esse problema ocorre porque estamos tentando estender as classes de forma em duas dimensões independentes: por forma e por cor. Esse é um problema muito comum na herança de classes.
+
+- O padrão Bridge tenta resolver esse problema alternando da herança para a composição do objeto. O que isso significa é que você extrai uma das dimensões em uma hierarquia de classes separada, para que as classes originais façam referência a um objeto da nova hierarquia, em vez de ter todos os seus estados e comportamentos em uma classe.
+
+- Você pode impedir a explosão de uma hierarquia de classes, transformando-a em várias hierarquias relacionadas.
+
+- Seguindo essa abordagem, podemos extrair o código relacionado à cor em sua própria classe com duas subclasses: Red e Blue . A classe Shape obtém um campo de referência apontando para um dos objetos de cores. Agora a forma pode delegar qualquer trabalho relacionado a cores no objeto de cor vinculado. Essa referência atuará como uma ponte(Bridge) entre as classes Shape e Color. A partir de agora, adicionar novas cores não exigirá alterações na hierarquia de formas e vice-versa.
+
+</br>
+
+<h4> 📌 Implementação: </h4>
+
+</br>
+
+- <a href="https://github.com/LuannMateus/design-patterns-gof/tree/main/src/structural/bridge">Bridge</a>
 
 </div>
 
@@ -447,3 +496,5 @@
 - <i>Design Patterns — Parte 10 — Composite. Medium, 2019. Disponível em: https://medium.com/xp-inc/desing-patterns-parte-10-composite-f7600cb3aad7. Acesso em: 19/04/2022.</i>
 
 - <i>Design Patterns — Parte 8 — Adapter. Medium, 2019. Disponível em: https://medium.com/xp-inc/desing-patterns-parte-8-adapter-21ed67ceb9ed. Acesso em: 19/04/2022.</i>
+
+- <i>Design Patterns — Parte 9 — Bridge. Medium, 2019. Disponível em: https://medium.com/xp-inc/desing-patterns-parte-9-bridge-5ca127f72de. Acesso em: 11/05/2022.</i>
