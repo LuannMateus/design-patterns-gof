@@ -35,6 +35,7 @@
   - [Adapter](#structural-adapter)
   - [Bridge](#structural-bridge)
   - [Decorator](#structural-decorator)
+  - [Facade](#structural-facade)
 
 <a id="creational"></a>
 
@@ -560,6 +561,47 @@
 
 - <a href="https://github.com/LuannMateus/design-patterns-gof/tree/main/src/structural/decorator">Decorator</a>
 
+<br />
+
+<a id="structural-facade"></a>
+
+<h3 align="center"><b>Facade</b></h3>
+
+<div align="left">
+<h4> 📌 Intenção: </h4>
+
+</br>
+
+- Facade é um padrão de design estrutural que fornece uma interface simplificada para uma biblioteca, uma estrutura ou qualquer outro conjunto complexo de classes. Quando falamos de design patterns facade é um dos mais conhecidos, assim como singleton.
+
+</br>
+
+<h4> 📌 Problema: </h4>
+
+</br>
+
+- Imagine que você deve fazer seu código funcionar com um amplo conjunto de objetos que pertencem a uma biblioteca ou estrutura sofisticada. Normalmente, você precisa inicializar todos esses objetos, acompanhar as dependências, executar métodos na ordem correta e assim por diante.
+
+- Como resultado, a lógica comercial de suas classes ficaria fortemente acoplada aos detalhes de implementação de classes de terceiros, dificultando a compreensão e a manutenção.
+
+</br>
+
+<h4> 📌 Solução: </h4>
+
+</br>
+
+- Facade discute o encapsulamento de um subsistema complexo em um único objeto de interface. Isso reduz a curva de aprendizado necessária para alavancar com sucesso o subsistema. Também promove a dissociação do subsistema de seus muitos clientes potencialmente. Por outro lado, se a Facade for o único ponto de acesso para o subsistema, limitará os recursos e a flexibilidade que “usuários avançados” podem precisar.
+
+- O objeto Fachada deve ser um advogado ou facilitador bastante simples. Não deve se tornar um oráculo onisciente ou um objeto “deus”.
+
+</br>
+
+<h4> 📌 Implementação: </h4>
+
+</br>
+
+- <a href="https://github.com/LuannMateus/design-patterns-gof/tree/main/src/structural/facade">Facade</a>
+
 </div>
 
 </div>
@@ -593,3 +635,5 @@
 - <i>Design Patterns — Parte 9 — Bridge. Medium, 2019. Disponível em: https://medium.com/xp-inc/desing-patterns-parte-9-bridge-5ca127f72de. Acesso em: 11/05/2022.</i>
 
 - <i>Design Patterns — Parte 11 — Decorator. Medium, 2019. Disponível em: https://medium.com/xp-inc/desing-patterns-parte-11-decorator-ba348f44142f. Acesso em: 15/05/2022.</i>
+
+- <i>Design Patterns — Parte 12 — Facade. Medium, 2019. Disponível em: https://medium.com/xp-inc/desing-patterns-parte-12-facade-ff66c68f5784. Acesso em: 15/05/2022.</i>
