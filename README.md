@@ -33,6 +33,8 @@
 - [Structural](#structural)
   - [Composite](#structural-composite)
   - [Adapter](#structural-adapter)
+  - [Bridge](#structural-bridge)
+  - [Decorator](#structural-decorator)
 
 <a id="creational"></a>
 
@@ -467,6 +469,97 @@
 
 - <a href="https://github.com/LuannMateus/design-patterns-gof/tree/main/src/structural/bridge">Bridge</a>
 
+<a id="structural-adapter"></a>
+
+<h3 align="center"><b>Adapter</b></h3>
+
+<div align="left">
+<h4> 📌 Intenção: </h4>
+
+</br>
+
+- Converta a interface de uma classe em outra interface que os clientes esperam. O adapter permite que as classes trabalhem juntas que não poderiam de outra forma por causa de interfaces incompatíveis.
+
+- Agrupe uma classe existente com uma nova interface.
+- A impedância corresponde a um componente antigo a um novo sistema
+
+</br>
+
+<h4> 📌 Problema: </h4>
+
+</br>
+
+- Imagine que você está criando um aplicativo de monitoramento do mercado de ações. O aplicativo baixa os dados de estoque de várias fontes no formato XML e exibe gráficos e diagramas de boa aparência para o usuário.
+
+- Em algum momento, você decide melhorar o aplicativo integrando uma biblioteca de análise inteligente de terceiros. Mas há um problema: a biblioteca de análise funciona apenas com dados no formato JSON.
+- Você não pode usar a biblioteca de análise “como está”, pois espera os dados em um formato incompatível com seu aplicativo.
+- Você pode alterar a biblioteca para trabalhar com XML. No entanto, isso pode quebrar algum código existente que depende da biblioteca. E pior, você pode não ter acesso ao código-fonte da biblioteca em primeiro lugar, tornando essa abordagem impossível.
+
+</br>
+
+<h4> 📌 Solução: </h4>
+
+</br>
+
+- Declare a interface do Adapter (Target no diagrama): essa é a interface que seu código cliente usa e todos os Adapters concretos implementam. Ela deve ter os métodos que serão encaminhados para o código que está sendo adaptado (Adaptee no diagrama).
+
+- Crie adaptares concretos que implementam a interface do Adapter (Adapter no diagrama): você pode criar quantas classes adaptadoras precisar para seu código. Essa classe deverá encaminhar chamadas de métodos para o código que está sendo adaptado (Adaptee no diagrama).
+
+- Encaminhe as chamadas de método do Adapter para o Adaptee: agora você só precisará encaminhar as chamadas de métodos do seu Adapter concreto para o código que está sendo adaptado (Adaptee no diagrama).
+
+</br>
+
+<h4> 📌 Implementação: </h4>
+
+</br>
+
+- <a href="https://github.com/LuannMateus/design-patterns-gof/tree/main/src/structural/bridge">Adapter</a>
+
+<br />
+
+<a id="structural-decorator"></a>
+
+<h3 align="center"><b>Decorator</b></h3>
+
+<div align="left">
+<h4> 📌 Intenção: </h4>
+
+</br>
+
+- O Decorator é um padrão de design estrutural que permite anexar novos comportamentos aos objetos, colocando-os dentro de objetos especiais do wrapper que contêm os comportamentos.
+
+</br>
+
+<h4> 📌 Problema: </h4>
+
+</br>
+
+- Você deseja adicionar comportamento ou estado a objetos individuais em tempo de execução. A herança não é viável porque é estática e se aplica a uma classe inteira.
+
+</br>
+
+<h4> 📌 Solução: </h4>
+
+</br>
+
+- Estender uma classe é a primeira coisa que vem à mente quando você precisa alterar o comportamento de um objeto. No entanto, a herança tem várias advertências sérias que você precisa estar ciente.
+
+- A herança é estática. Você não pode alterar o comportamento de um objeto existente no tempo de execução. Você só pode substituir o objeto inteiro por outro criado a partir de uma subclasse diferente.
+
+- As subclasses podem ter apenas uma classe pai. Na maioria dos idiomas, a herança não permite que uma classe herde comportamentos de várias classes ao mesmo tempo.
+
+- Uma das maneiras de superar essas advertências é usando Agregação ou Composição em vez de herança . Ambas as alternativas funcionam quase da mesma maneira: um objeto fazreferência a outro e delega-lhe algum trabalho, enquanto que com a herança, o próprio objeto é capaz de fazer esse trabalho, herdando o comportamento de sua superclasse.
+
+- Com essa nova abordagem, você pode facilmente substituir o objeto “auxiliar” vinculado por outro, alterando o comportamento do contêiner em tempo de execução. Um objeto pode usar o comportamento de várias classes, tendo referências a vários objetos e delegando a eles todos os tipos de trabalho. A agregação / composição é o princípio principal por trás de muitos padrões de design, incluindo o Decorator. Nessa nota, vamos voltar à discussão sobre padrões.
+
+</br>
+
+<h4> 📌 Implementação: </h4>
+
+</br>
+
+- <a href="https://github.com/LuannMateus/design-patterns-gof/tree/main/src/structural/decorator">Decorator</a>
+
 </div>
 
 </div>
@@ -498,3 +591,5 @@
 - <i>Design Patterns — Parte 8 — Adapter. Medium, 2019. Disponível em: https://medium.com/xp-inc/desing-patterns-parte-8-adapter-21ed67ceb9ed. Acesso em: 19/04/2022.</i>
 
 - <i>Design Patterns — Parte 9 — Bridge. Medium, 2019. Disponível em: https://medium.com/xp-inc/desing-patterns-parte-9-bridge-5ca127f72de. Acesso em: 11/05/2022.</i>
+
+- <i>Design Patterns — Parte 11 — Decorator. Medium, 2019. Disponível em: https://medium.com/xp-inc/desing-patterns-parte-11-decorator-ba348f44142f. Acesso em: 15/05/2022.</i>
