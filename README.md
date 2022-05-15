@@ -36,6 +36,7 @@
   - [Bridge](#structural-bridge)
   - [Decorator](#structural-decorator)
   - [Facade](#structural-facade)
+  - [Proxy](#structural-proxy)
 
 <a id="creational"></a>
 
@@ -602,6 +603,47 @@
 
 - <a href="https://github.com/LuannMateus/design-patterns-gof/tree/main/src/structural/facade">Facade</a>
 
+<br />
+
+<a id="structural-proxy"></a>
+
+<h3 align="center"><b>Proxy</b></h3>
+
+<div align="left">
+<h4> 📌 Intenção: </h4>
+
+</br>
+
+- Proxy é um padrão de design estrutural que permite fornecer um substituto ou espaço reservado para outro objeto. Um proxy controla o acesso ao objeto original, permitindo que você execute algo antes ou depois que a solicitação chega ao objeto original.
+
+</br>
+
+<h4> 📌 Problema: </h4>
+
+</br>
+
+- Você precisa oferecer suporte a objetos com fome de recursos e não deseja instanciar esses objetos, a menos e até que eles sejam realmente solicitados pelo cliente.
+
+</br>
+
+<h4> 📌 Solução: </h4>
+
+</br>
+
+- O padrão Proxy sugere que você crie uma nova classe de proxy com a mesma interface que um objeto de serviço original. Em seguida, você atualiza seu aplicativo para que ele transmita o objeto proxy para todos os clientes do objeto original. Ao receber uma solicitação de um cliente, o proxy cria um objeto de serviço real e delega todo o trabalho para ele.
+
+- O proxy se disfarça de objeto de banco de dados. Ele pode lidar com inicialização lenta e cache de resultados sem o cliente ou o objeto de banco de dados real saiba.
+
+- Mas qual é o benefício? Se você precisar executar algo antes ou depois da lógica primária da classe, o proxy permitirá fazer isso sem alterar essa classe. Como o proxy implementa a mesma interface que a classe original, ele pode ser passado para qualquer cliente que espera um objeto de serviço real.
+
+</br>
+
+<h4> 📌 Implementação: </h4>
+
+</br>
+
+- <a href="https://github.com/LuannMateus/design-patterns-gof/tree/main/src/structural/proxy">Proxy</a>
+
 </div>
 
 </div>
@@ -637,3 +679,6 @@
 - <i>Design Patterns — Parte 11 — Decorator. Medium, 2019. Disponível em: https://medium.com/xp-inc/desing-patterns-parte-11-decorator-ba348f44142f. Acesso em: 15/05/2022.</i>
 
 - <i>Design Patterns — Parte 12 — Facade. Medium, 2019. Disponível em: https://medium.com/xp-inc/desing-patterns-parte-12-facade-ff66c68f5784. Acesso em: 15/05/2022.</i>
+
+- <i>Design Patterns — Parte 14 — Proxy
+  . Medium, 2019. Disponível em: https://medium.com/xp-inc/design-patterns-parte-14-proxy-9f72c15a2ee1. Acesso em: 15/05/2022.</i>
